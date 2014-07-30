@@ -497,7 +497,7 @@ var components = exports.components = {
     
      startdice: function(target, room, user) {
                 if (!this.canBroadcast()) return;
-                if (isNaN(target) || !target || target == 0) return this.sendReply('/startdice - You can not bet less than 1 buck.');
+                if (isNaN(target) || !target || target >= 0) return this.sendReply('/startdice - You can not bet less than 1 buck.');
                 if (dice[room.id]) return this.sendReply('/startdice - A dice is already running in the room.');
 
                 var target = parseInt(target);
