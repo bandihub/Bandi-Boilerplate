@@ -541,7 +541,7 @@ var components = exports.components = {
                 room.addRaw('<b>' + user.name + ' has ended the game of dice.</b>');
 
                 delete dice[room.id];
-        }
+        },
 
     /*********************************************************
      * Staff commands
