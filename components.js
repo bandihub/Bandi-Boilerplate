@@ -203,13 +203,13 @@ var components = exports.components = {
 
     shop: function (target, room, user) {
         if (!this.canBroadcast()) return;
-        return this.sendReply('|raw|' + Core.shop(true));
+        return this.sendReply('|raw|' + economy.shop(true));
     },
 
     buy: function (target, room, user) {
         if (!target) this.parse('/help buy');
         var userMoney = Number(Core.stdin('money', user.userid));
-        var shop = Core.shop(false);
+        var shop = economy.shop(false);
         var len = shop.length;
         while (len--) {
             if (target.toLowerCase() === shop[len][0].toLowerCase()) {
