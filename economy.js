@@ -56,10 +56,10 @@ var ecomony = {
                     room.addRaw(Users.users[players[1]].name + ' rolled a <font color=red>' + rolls[Users.users[players[1]]] + '</font>');
                     room.addRaw('<font color=#24678d> ' + winner + ' wins the dice game and ' + '<font color=red>' + dice[room.id].bet + '</font> bucks.</font>');
 
-                    var total = Number(Core.stdin('money.csv', Users.users[winner].userid)) + Number(dice[room.id].bet)
+                    var total = Number(Core.stdin('money', Users.users[winner].userid)) + Number(dice[room.id].bet)
                     Core.stdout('money.csv', Users.users[winner].userid, total);
 
-                    var amount = Number(Core.stdin('money.csv', Users.users[loser].userid)) - Number(dice[room.id].bet);
+                    var amount = Number(Core.stdin('money', Users.users[loser].userid)) - Number(dice[room.id].bet);
                     Core.stdout('money.csv', Users.users[loser].userid, amount);
                 } else {
                     return room.add('It was a draw, both frens keep their money');
